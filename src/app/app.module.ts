@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardServiceService } from './dashboard/dashboard-service.service';
+import { OrderByPipe } from './common/sort-by.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,8 @@ import { DashboardServiceService } from './dashboard-service.service';
 })
 export class DashboardComponent implements OnInit {
 
+  contentJson = [];
+  orderByType = 'asc';
   constructor(
     private dashboardService: DashboardServiceService,
     private http: HttpClient
@@ -24,6 +26,12 @@ export class DashboardComponent implements OnInit {
   }
 
   loadData() {
-
+    this.dashboardService.getData().subscribe(onSuccess => {
+      this.contentJson = onSuccess['results'];
+    }),
+      // tslint:disable-next-line:no-unused-expression
+      onFail => {
+        console.log(onFail);
+      };
   }
 }

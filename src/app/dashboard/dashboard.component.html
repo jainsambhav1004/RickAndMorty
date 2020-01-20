@@ -1,26 +1,77 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-            Header
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 header">
+            <div>Home</div>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-12 col-12">
             Filters
         </div>
-        <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 content marginTop20">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 textAlignRight">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Sort by Id
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" (click)="orderByType = 'asc'">Ascending</a>
+                        <a class="dropdown-item" (click)="orderByType = 'desc'">Descending</a>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                    Content 1
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                    Content 2
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                    Content 3
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                    Content 4
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 marginTop20" *ngFor="let contentJson of contentJson | orderBy:orderByType:'id'">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="imageContainer">
+                                <div>
+                                    <img [src]="contentJson.image" />
+                                </div>
+                                <div class="imageText">
+                                    <h2>{{contentJson.name}}</h2>
+                                    <p>ID: {{contentJson.id}} Created: {{contentJson.created | date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="dataCard">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignLeft">
+                                        STATUS
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignRight">
+                                        {{contentJson.status}}
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignLeft">
+                                        SPECIES
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignRight">
+                                        {{contentJson.species}}
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignLeft">
+                                        GENDER
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignRight">
+                                        {{contentJson.gender}}
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignLeft">
+                                        ORIGIN
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignRight">
+                                        {{contentJson.origin.name}}
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignLeft">
+                                        LAST LOCATION
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 textAlignRight">
+                                        {{contentJson.location.name}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
