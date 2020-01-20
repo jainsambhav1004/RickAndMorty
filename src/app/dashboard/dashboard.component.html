@@ -8,11 +8,36 @@
         <div class="col-lg-2 col-md-2 col-sm-12 col-12">
             <div class="marginTop20">Filters:</div>
             <div class="filterFrame">
+                <div>Gender:</div>
                 <div class="marginTop20">
                     <input type="checkbox" (change)="toggleEditable()" [(ngModel)]="Male" name="Male" value="Male"> MALE
                 </div>
                 <div class="marginTop10">
                     <input type="checkbox" (change)="toggleEditable()" [(ngModel)]="Female" name="Female" value="Female"> FEMALE
+                </div>
+            </div>
+            <div class="filterFrame">
+                <div>Species:</div>
+                <div class="marginTop20">
+                    <input type="checkbox" (change)="toggleEditable()" [(ngModel)]="Male" name="Male" value="Male"> Human
+                </div>
+                <div class="marginTop10">
+                    <input type="checkbox" (change)="toggleEditable()" [(ngModel)]="Female" name="Female" value="Female"> Mythology
+                </div>
+                <div class="marginTop10">
+                    <input type="checkbox" (change)="toggleEditable()" [(ngModel)]="Female" name="Female" value="Female"> Other
+                </div>
+            </div>
+            <div class="filterFrame">
+                <div>Origin:</div>
+                <div class="marginTop20">
+                    <input type="checkbox" (change)="toggleEditable()" [(ngModel)]="Male" name="Male" value="Male"> Unknown
+                </div>
+                <div class="marginTop10">
+                    <input type="checkbox" (change)="toggleEditable()" [(ngModel)]="Female" name="Female" value="Female"> Nupta 4
+                </div>
+                <div class="marginTop10">
+                    <input type="checkbox" (change)="toggleEditable()" [(ngModel)]="Female" name="Female" value="Female"> Other
                 </div>
             </div>
         </div>
