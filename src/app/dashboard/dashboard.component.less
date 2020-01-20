@@ -7,7 +7,15 @@
     font-weight: bold;
 }
 
+.filterFrame {
+    margin-top: 30px;
+    width: 100%;
+    border: solid 2px #FFF;
+    padding: 10px;
+}
+
 .content {
+    word-wrap: break-word;
 
     .imageContainer {
         position: relative;
@@ -31,9 +39,10 @@
         color: rgb(255, 152, 0);
         background: rgb(51, 51, 51);
         padding: 10px;
-        height: 220px;
+        min-height: 220px;
         font-size: 0.9rem;
         font-weight: 200;
+        display: inline-block;
 
         .textAlignLeft {
             font-size: 0.7rem;
@@ -54,13 +63,57 @@
         height: 40px;
     }
 
+    .imageText {
+        h2 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+
+    }
+
+    .dataCard {
+        .textAlignLeft {
+            font-size: 10px;
+        }
+
+        .textAlignRight {
+            font-size: 10px;
+        }
+    }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+
+    .imageText {
+        h2 {
+            font-size: 12px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+
+    }
+
+    .dataCard {
+        .textAlignLeft {
+            font-size: 10px;
+        }
+
+        .textAlignRight {
+            font-size: 10px;
+        }
+    }
+
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}

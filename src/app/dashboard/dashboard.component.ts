@@ -13,7 +13,10 @@ import { DashboardServiceService } from './dashboard-service.service';
 export class DashboardComponent implements OnInit {
 
   contentJson = [];
+  contentJsonConst = [];
   orderByType = 'asc';
+  Male = true;
+  Female = true;
   constructor(
     private dashboardService: DashboardServiceService,
     private http: HttpClient
@@ -28,10 +31,29 @@ export class DashboardComponent implements OnInit {
   loadData() {
     this.dashboardService.getData().subscribe(onSuccess => {
       this.contentJson = onSuccess['results'];
+      this.contentJsonConst = onSuccess['results'];
     }),
       // tslint:disable-next-line:no-unused-expression
       onFail => {
         console.log(onFail);
       };
+  }
+  toggleEditable() {
+    this.contentJson = this.contentJsonConst;
+    if (this.Male === true && this.Female === true) {
+
+    } else if (this.Male === true) {
+      // tslint:disable-next-line:only-arrow-functions
+      this.contentJson = this.contentJson.filter(function(item) {
+        return item.gender === 'Male';
+      });
+    } else if (this.Female === true) {
+      // tslint:disable-next-line:only-arrow-functions
+      this.contentJson = this.contentJson.filter(function(item) {
+        return item.gender === 'Female';
+      });
+    } else {
+      this.contentJson = [];
+    }
   }
 }
